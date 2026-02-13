@@ -28,7 +28,7 @@
     </ul>
 
     <!-- right -->
-    <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+    <button class="nav-btn" onclick="openPopup()">
        Book Consultation 
     </button>
 
@@ -1068,14 +1068,35 @@
     <span class="popup-close" onclick="closePopup()">✕</span>
   </div>
 
-  <form class="popup-form">
-    <input type="text" placeholder="Full Name*" required>
-    <input type="tel" placeholder="Phone Number*" required>
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Your Concern"></textarea>
+ <form class="popup-form">
 
-    <button type="submit">Request Call Back</button>
-  </form>
+  <input type="text" placeholder="Full Name*" required>
+
+  <input type="tel" placeholder="Phone Number*" required>
+
+  <input type="email" placeholder="Email">
+
+  <!-- SERVICE SELECT BUTTON STYLE -->
+  <div class="service-select-wrapper">
+    <select  required>
+      <option value="" disabled selected>Select Treatment Service*</option>
+      <option>Chemical Peels</option>
+      <option>Facial Treatment</option>
+      <option>Laser & Light Therapy</option>
+      <option>Acne Treatments</option>
+      <option>PRP Treatment</option>
+      <option>Scar Management</option>
+      <option>Body Contouring</option>
+      <option>Weight Loss Program</option>
+    </select>
+  </div>
+
+  <textarea placeholder="Your Concern"></textarea>
+
+  <button type="submit">Request Call Back</button>
+
+</form>
+
 </div>
 
 
