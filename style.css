@@ -172,6 +172,8 @@ body {
     display: block;
   }
 }
+
+
 .footersection {
   background: #111;
   color: #ddd;
@@ -373,14 +375,7 @@ body {
 }
 
 
-
-
-
-
-
-
 /* =============--------------=================== */
-
 /* ================= PREMIUM HERO ================= */
 .hero-3d {
   height: 100vh;
@@ -391,7 +386,7 @@ body {
   background-size: cover;
   align-items: center;
   justify-content: center;
-  perspective: 1200px;
+  perspective: 1400px;
   overflow: hidden;
   position: relative;
 }
@@ -490,7 +485,7 @@ body {
   text-align: center;
 }
 
-.highlight {
+/* .highlight {
   display: inline-block;
   padding: 10px 25px;
   border: 1px solid #af803e;
@@ -499,12 +494,12 @@ body {
   font-weight: 600;
   background: #af803e;
   color: #fff;
-}
+} */
 
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .feature-list li {
@@ -519,13 +514,14 @@ body {
 .btn1 {
   display:inline-block;
   margin-top: 20px;
-  padding: 14px 36px;
+  padding: 14px 20px;
   background: #af803e;
   color: #fff;
   text-decoration: none;
   border-radius: 40px;
   font-weight: 600;
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .btn1:hover {
@@ -550,7 +546,7 @@ body {
 }
 
 .hero-3d .btn1 {
-  margin-top: 0;
+  /* margin-top: 20px; */
   cursor: pointer;
 }
 
@@ -577,12 +573,11 @@ body {
   position: relative;
   z-index: 10;
 }
-.carousel-track {
+.carousel-slide {
   pointer-events: none;
 }
 
-.carousel-slide,
-.carousel-slide * {
+.carousel-slide.active {
   pointer-events: auto;
 }
 
@@ -648,6 +643,7 @@ small span{
   .hero-3d {
     height: auto;
     padding: 120px 20px 60px 20px;
+    height: 100vh;
   }
 
   .carousel {
@@ -696,23 +692,41 @@ small span{
   .hero-3d {
     padding: 100px 15px 40px 15px;
     background-position: center;
+    height: 100vh;
   }
 
   .carousel {
     height: auto;
   }
 
+  /* ===== MOBILE 3D DISABLE ===== */
+
+.carousel-track{
+  transform:none !important;
+}
+
+.carousel-slide{
+  position:relative !important;
+  transform:none !important;
+  display:none;
+}
+
+.carousel-slide.active{
+  display:block;
+}
+
+
   .content {
     max-width: 100%;
   }
 
   .content h1 {
-    font-size: 26px;
+    font-size: 30px;
     line-height: 1.4;
   }
 
   .content p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .highlight {
@@ -724,11 +738,11 @@ small span{
     display: block;
     width: 100%;
     font-size: 14px;
-    padding: 14px;
+    padding: 10px 0 10px 0;
   }
 
   small {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   /* CTA Section */
@@ -759,23 +773,24 @@ small span{
 @media (max-width: 480px) {
 
   .hero-3d {
-    padding: 80px 12px 30px 12px;
+    padding: 80px 8px 30px 8px;
+    height: 100vh;
   }
 
   .content h1 {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 17px;
   }
 
-  .highlight {
-    font-size: 12px;
-  }
+ 
 
   .btn {
-    font-size: 13px;
+    font-size: 12px;
+    width: 100%;
+    padding: 10px 0 10px 0;
   }
 
   .cta-container h2 {
@@ -784,13 +799,14 @@ small span{
 }
 
 
+
 /* =============================== */
 
 /* ===== CTA SECTION ===== */
 
 .cta-section {
   width: 100%;
-  padding: 100px 20px;
+  padding: 70px 20px;
   background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
   color: #fff;
   text-align: center;
@@ -896,7 +912,7 @@ small span{
 /* ================= LUXURY HERO ================= */
 
 .luxury-hero {
-  padding: 160px 20px 120px;
+  padding: 100px 20px 60px;
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   color: #000;
 }
@@ -997,29 +1013,140 @@ small span{
   from { transform: translateY(0px); }
   to { transform: translateY(-12px); }
 }
+/* ================================
+   LARGE TABLET (1200px ↓)
+================================== */
+@media (max-width: 1200px) {
+  .luxury-text h1 {
+    font-size: 40px;
+  }
 
-/* RESPONSIVE */
+  .luxury-sub {
+    font-size: 22px;
+  }
+}
 
+
+/* ================================
+   TABLET VIEW (992px ↓)
+================================== */
 @media (max-width: 992px) {
+
+  .luxury-hero {
+    padding: 80px 20px 50px;
+  }
+
   .luxury-container {
     grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
   }
 
+  .luxury-text h1 {
+    font-size: 34px;
+  }
+
+  .luxury-sub {
+    font-size: 18px;
+  }
+
   .luxury-text p {
+    font-size: 16px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .luxury-btn {
+    padding: 14px 30px;
+  }
+
   .visual-card {
-    height: 300px;
-    margin-top: 40px;
+    height: 320px;
+    margin-top: 20px;
+  }
+
+  .visual-card img {
+    height: 320px;
+    object-fit: cover;
+  }
+}
+
+
+/* ================================
+   MOBILE VIEW (768px ↓)
+================================== */
+@media (max-width: 768px) {
+
+  .luxury-hero {
+    padding: 60px 15px 40px;
+  }
+
+  .luxury-tag {
+    font-size: 12px;
+    letter-spacing: 1.5px;
   }
 
   .luxury-text h1 {
-    font-size: 32px;
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .luxury-sub {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .luxury-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .luxury-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .luxury-text small {
+    font-size: 12px;
+  }
+
+  .visual-card {
+    height: 250px;
+    border-radius: 18px;
+  }
+
+  .visual-card img {
+    height: 250px;
+    border-radius: 18px;
+    object-fit: cover;
   }
 }
+
+
+/* ================================
+   SMALL MOBILE (480px ↓)
+================================== */
+@media (max-width: 480px) {
+
+  .luxury-text h1 {
+    font-size: 22px;
+  }
+
+  .luxury-sub {
+    font-size: 14px;
+  }
+
+  .visual-card {
+    height: 220px;
+  }
+
+  .visual-card img {
+    height: 220px;
+  }
+}
+
 
 
 /* =============================== */
@@ -1027,7 +1154,7 @@ small span{
 /* ===== COMPARISON SECTION ===== */
 
 .comparison-section {
-  padding: 120px 20px;
+  padding: 50px 20px;
   background: #ffffff;
   text-align: center;
 }
@@ -1156,22 +1283,96 @@ small span{
 }
 
 /* Responsive */
+/* ===============================
+   TABLET VIEW (1024px and below)
+================================== */
+@media (max-width: 1024px) {
 
-@media (max-width: 768px) {
   .comparison-container h2 {
-    font-size: 28px;
+    font-size: 34px;
   }
 
   .comparison-sub {
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 30px;
   }
 
-  .comparison-table th,
-  .comparison-table td {
-    padding: 12px;
-    font-size: 14px;
+  .comparison-table td,
+  .comparison-table th {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .comparison-btn {
+    padding: 14px 32px;
   }
 }
+
+
+/* ===============================
+   MOBILE VIEW (768px and below)
+================================== */
+@media (max-width: 768px) {
+
+  .comparison-section {
+    padding: 50px 15px;
+  }
+
+  .comparison-container h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .comparison-sub {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  /* Make table stacked */
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table tr {
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+
+  .comparison-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .comparison-table td:first-child {
+    font-weight: 600;
+    background: #f8f3ea;
+  }
+
+  .comparison-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Full width button */
+  .comparison-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 30px;
+  }
+}
+
 
 
 /* =================== */
@@ -1179,7 +1380,7 @@ small span{
 /* ===== PROCESS SECTION ===== */
 
 .process-section {
-  padding: 140px 20px;
+  padding:70px 20px;
   background: linear-gradient(to bottom, #ffffff, #f8f5f1);
   text-align: left;
   overflow: hidden;
@@ -1191,8 +1392,8 @@ small span{
 }
 
 .process-container h2 {
-  font-size: 42px;
-  margin-bottom: 16px;
+  font-size: 46px;
+  margin-bottom: 20px;
   color: #111;
 }
 
@@ -1209,14 +1410,16 @@ small span{
 }
 
 .process-lead {
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 1.5;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .process-note {
-  font-size: 15px;
-  color: #777;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #918b8b;
   max-width: 520px;
 }
 
@@ -1351,7 +1554,7 @@ small span{
 /* CTA Button */
 
 .process-btn {
-  display: inline-block;
+  /* display: inline-block; */
   margin-top: 40px;
   padding: 16px 40px;
   background: #af803e;
@@ -1409,6 +1612,9 @@ small span{
   .process-container h2 {
     font-size: 28px;
   }
+  .process-btn {
+    margin-top: 50px;
+  }
 }
 
 
@@ -1418,7 +1624,7 @@ small span{
 /* ===== LIMITED OFFER SECTION ===== */
 
 .limited-offer {
-  padding: 140px 20px;
+  padding: 70px 20px;
   background: linear-gradient(135deg, #111 0%, #1b1b1b 100%);
   color: #fff;
   overflow: hidden;
@@ -1439,20 +1645,14 @@ small span{
   color: #af803e;
   font-weight: 600;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
 /* Headings */
 .offer-content h2 {
-  font-size: 46px;
-  margin-bottom: 10px;
-}
-
-.offer-content h3 {
-  font-size: 22px;
-  color: #ccc;
-  margin-bottom: 30px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 /* List */
@@ -1465,7 +1665,7 @@ small span{
 .offer-list li {
   margin-bottom: 10px;
   color: #ddd;
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   padding-left: 18px;
 }
@@ -1531,20 +1731,133 @@ small span{
   transform: translateY(40px);
   transition: 1s ease;
 }
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
-/* Responsive */
+  .offer-content h2 {
+    font-size: 42px;
+  }
+
+  .offer-list li {
+    font-size: 16px;
+  }
+}
+
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
 @media (max-width: 992px) {
+
+  .limited-offer {
+    padding: 60px 20px;
+  }
+
   .offer-container {
     grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
+  }
+
+  .offer-content h2 {
+    font-size: 36px;
+  }
+
+  .offer-tag {
+    font-size: 14px;
+  }
+
+  .offer-list {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+  }
+
+  .offer-list li {
+    font-size: 15px;
+  }
+
+  .offer-btn {
+    padding: 14px 32px;
   }
 
   .offer-trust {
     justify-content: center;
   }
 
+  .offer-image img {
+    transform: none;
+    opacity: 1;
+    margin-top: 20px;
+  }
+
+  .offer-content {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .limited-offer {
+    padding: 50px 15px;
+  }
+
   .offer-content h2 {
-    font-size: 32px;
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .offer-list li {
+    font-size: 14px;
+    padding-left: 16px;
+  }
+
+  .offer-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .offer-trust {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .offer-trust span {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .offer-image img {
+    border-radius: 18px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .offer-content h2 {
+    font-size: 24px;
+  }
+
+  .offer-tag {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .offer-list li {
+    font-size: 13px;
   }
 }
 
@@ -1554,7 +1867,7 @@ small span{
 /* ===== TESTIMONIAL SECTION ===== */
 
 .testimonial-section {
-  padding: 140px 20px;
+  padding: 70px 20px;
   background: linear-gradient(to bottom, #ffffff, #f8f5f1);
 }
 
@@ -1570,7 +1883,7 @@ small span{
 /* LEFT */
 
 .testimonial-intro h2 {
-  font-size: 40px;
+  font-size: 48px;
   margin-bottom: 20px;
   color: #111;
 }
@@ -1648,7 +1961,7 @@ small span{
 
 .testimonial-cta {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .testimonial-cta a {
@@ -1667,11 +1980,120 @@ small span{
 }
 
 /* Responsive */
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
+  .testimonial-intro h2 {
+    font-size: 40px;
+  }
+
+  .testimonial-card {
+    padding: 32px;
+  }
+}
+
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
 @media (max-width: 992px) {
+
   .testimonial-container {
     grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
+  }
+
+  .testimonial-intro h2 {
+    font-size: 34px;
+  }
+
+  .testimonial-intro p {
+    font-size: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-card {
+    padding: 30px;
+  }
+
+  .testimonial-card h5 {
+    font-size: 16px;
+  }
+
+  .testimonial-cta a {
+    padding: 14px 32px;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .testimonial-section {
+    padding: 50px 15px;
+  }
+
+  .testimonial-intro h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .testimonial-intro p {
+    font-size: 14px;
+  }
+
+  .testimonial-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .testimonial-card h4 {
+    font-size: 14px;
+  }
+
+  .testimonial-card h5 {
+    font-size: 15px;
+  }
+
+  .testimonial-card p {
+    font-size: 14px;
+  }
+
+  .testimonial-dots span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .testimonial-cta a {
+    width: 100%;
+    display: inline-block;
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .testimonial-intro h2 {
+    font-size: 22px;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+
+  .testimonial-card p {
+    line-height: 1.5;
   }
 }
 
@@ -1682,7 +2104,7 @@ small span{
 /* ===== MEDICAL SECTION ===== */
 
 .medical-section {
-  padding: 140px 20px;
+  padding: 70px 20px;
   background: linear-gradient(to bottom, #ffffff, #f8f5f1);
 }
 
@@ -1768,18 +2190,114 @@ small span{
 
 /* Responsive */
 
-@media (max-width: 992px) {
-  .medical-container {
-    grid-template-columns: 1fr;
-    text-align: center;
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
+
+  .medical-content h2 {
+    font-size: 38px;
   }
 
   .medical-card {
-    padding: 35px;
+    padding: 30px;
+  }
+}
+
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .medical-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
   }
 
   .medical-content h2 {
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .medical-content p {
+    font-size: 16px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .medical-card {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .medical-card ul {
+    text-align: left;
+  }
+
+  .medical-btn {
+    padding: 14px 30px;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .medical-section {
+    padding: 50px 15px;
+  }
+
+  .medical-content h2 {
+    font-size: 24px;
+  }
+
+  .medical-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .medical-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .medical-card h3 {
+    font-size: 18px;
+  }
+
+  .medical-card li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .medical-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .medical-content h2 {
+    font-size: 20px;
+  }
+
+  .medical-card {
+    padding: 18px;
+  }
+
+  .medical-card li {
+    font-size: 13px;
   }
 }
 
@@ -1789,7 +2307,7 @@ small span{
 /* ===== TREATMENT SECTION ===== */
 
 .treatment-section {
-  padding: 140px 20px;
+  padding: 60px 20px;
   background: linear-gradient(to bottom, #ffffff, #f8f5f1);
   text-align: left;
 }
@@ -1818,28 +2336,30 @@ small span{
 
 .treatment-tag {
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #af803e;
   background: rgba(175, 128, 62, 0.08);
   padding: 6px 14px;
   border-radius: 999px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 /* Heading */
 
 .treatment-container h2 {
-  font-size: 42px;
+  font-size: 50px;
   margin-bottom: 20px;
   color: #111;
 }
 
 .treatment-sub {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 70px;
+  font-size: 20px;
+
+  line-height: 1.6;
+  color: #4b4b4b;
+  margin-bottom: 20px;
 }
 
 .treatment-benefits {
@@ -1848,6 +2368,7 @@ small span{
   margin: 0 0 24px;
   color: #444;
   font-size: 15px;
+  font-weight: 600;
 }
 
 .treatment-benefits li {
@@ -1865,7 +2386,7 @@ small span{
 }
 
 .treatment-note {
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
   margin-top: 4px;
 }
@@ -1959,37 +2480,141 @@ small span{
 }
 
 /* Responsive */
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
-@media (max-width: 1100px) {
-  .treatment-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .treatment-section {
-    text-align: center;
-  }
-
-  .treatment-left {
-    max-width: none;
-    margin: 0 auto 40px;
+  .treatment-left h2 {
+    font-size: 38px;
   }
 
   .treatment-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .treatment-grid {
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .treatment-layout {
     grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
   }
 
-  .treatment-container h2 {
-    font-size: 28px;
+  .treatment-left h2 {
+    font-size: 32px;
+    line-height: 1.3;
   }
 
   .treatment-sub {
     font-size: 16px;
+  }
+
+  .treatment-benefits {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    text-align: left;
+  }
+
+  .treatment-note {
+    font-size: 15px;
+  }
+
+  .treatment-btn {
+    padding: 14px 30px;
+  }
+
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .treatment-section {
+    padding: 50px 15px;
+  }
+
+  .treatment-left h2 {
+    font-size: 24px;
+  }
+
+  .treatment-tag {
+    font-size: 12px;
+  }
+
+  .treatment-sub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .treatment-benefits li {
+    font-size: 14px;
+  }
+
+  .treatment-note {
+    font-size: 14px;
+  }
+
+  .treatment-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .treatment-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .treatment-card h3 {
+    font-size: 18px;
+  }
+
+  .treatment-card p {
+    font-size: 14px;
+  }
+
+  .treatment-label {
+    font-size: 12px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .treatment-left h2 {
+    font-size: 20px;
+  }
+
+  .treatment-card {
+    padding: 18px;
+  }
+
+  .treatment-card h3 {
+    font-size: 16px;
+  }
+
+  .treatment-card p {
+    font-size: 13px;
   }
 }
 
@@ -1999,7 +2624,7 @@ small span{
 /* ===== AUDIENCE SECTION ===== */
 
 .audience-section {
-  padding: 140px 20px;
+  padding: 60px 20px;
   background: linear-gradient(to bottom, #f8f5f1, #ffffff);
   text-align: center;
 }
@@ -2101,23 +2726,128 @@ small span{
 
 /* Responsive */
 
-@media (max-width: 992px) {
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
+
+  .audience-container h2 {
+    font-size: 38px;
+  }
+
   .audience-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
-@media (max-width: 768px) {
-  .audience-grid {
-    grid-template-columns: 1fr;
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .audience-container {
+    text-align: center;
   }
 
   .audience-container h2 {
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .audience-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .audience-card h3 {
+    font-size: 18px;
+  }
+
+  .audience-card p {
+    font-size: 14px;
   }
 
   .audience-note {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .audience-btn {
+    padding: 14px 32px;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .audience-section {
+    padding: 50px 15px;
+  }
+
+  .audience-container h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .audience-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .audience-card h3 {
     font-size: 16px;
+  }
+
+  .audience-card p {
+    font-size: 14px;
+  }
+
+  .audience-note {
+    font-size: 14px;
+    margin-top: 25px;
+  }
+
+  .audience-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .audience-container h2 {
+    font-size: 20px;
+  }
+
+  .audience-card {
+    padding: 18px;
+  }
+
+  .audience-card h3 {
+    font-size: 15px;
+  }
+
+  .audience-card p {
+    font-size: 13px;
   }
 }
 
@@ -2129,7 +2859,7 @@ small span{
 /* ===== FINAL VISIT SECTION ===== */
 
 .visit-final-section {
-  padding: 140px 20px;
+  padding: 70px 20px;
   background: linear-gradient(135deg, #ffffff 0%, #f8f5f1 100%);
   text-align: left;
 }
@@ -2344,42 +3074,157 @@ small span{
 }
 
 /* Responsive */
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
-@media (max-width: 1100px) {
-  .visit-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .visit-final-section {
-    text-align: center;
-  }
-
-  .visit-left {
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  .visit-right {
-    justify-content: center;
+  .visit-left h2 {
+    font-size: 36px;
   }
 
   .visit-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .visit-grid {
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .visit-layout {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
 
-  .visit-final-container h2 {
-    font-size: 28px;
+  .visit-left {
+    text-align: center;
+  }
+
+  .visit-left h2 {
+    font-size: 30px;
+    line-height: 1.3;
   }
 
   .visit-tagline {
     font-size: 16px;
+  }
+
+  .visit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+
+  .visit-description {
+    font-size: 15px;
+    max-width: 650px;
+    margin: 30px auto;
+  }
+
+  .visit-final-btn {
+    padding: 14px 32px;
+  }
+
+  .visit-form-card {
+    padding: 30px;
+  }
+}
+
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .visit-final-section {
+    padding: 50px 15px;
+  }
+
+  .visit-left h2 {
+    font-size: 24px;
+  }
+
+  .visit-tagline {
+    font-size: 14px;
+  }
+
+  .visit-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .visit-box {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .visit-description {
+    font-size: 14px;
+  }
+
+  .visit-final-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* FORM */
+
+  .visit-form-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .visit-form-card h3 {
+    font-size: 20px;
+  }
+
+  .visit-form-card p {
+    font-size: 14px;
+  }
+
+  .visit-form-row {
+    flex-direction: column;
+  }
+
+  .visit-form-input,
+  .visit-form-textarea {
+    font-size: 14px;
+  }
+
+  .visit-form-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .visit-form-note {
+    font-size: 12px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .visit-left h2 {
+    font-size: 20px;
+  }
+
+  .visit-box h4 {
+    font-size: 15px;
+  }
+
+  .visit-box p {
+    font-size: 13px;
+  }
+
+  .visit-form-card {
+    padding: 18px;
   }
 }
 
@@ -2391,7 +3236,7 @@ small span{
 /* ===== FINAL CTA SECTION ===== */
 
 .final-cta-section {
-  padding: 140px 20px;
+  padding: 70px 20px;
   background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
   color: #fff;
   text-align: center;
@@ -2552,21 +3397,117 @@ small span{
 }
 
 /* Responsive */
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
-@media (max-width: 768px) {
   .final-cta-container h2 {
-    font-size: 28px;
+    font-size: 38px;
+  }
+
+  .final-sub {
+    font-size: 18px;
+  }
+}
+
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .final-cta-section {
+    padding: 70px 20px;
+  }
+
+  .final-cta-container {
+    text-align: center;
+  }
+
+  .final-cta-container h2 {
+    font-size: 32px;
+    line-height: 1.3;
   }
 
   .final-sub {
     font-size: 16px;
   }
 
-  .final-cta-container p {
-    font-size: 15px;
+  .final-highlight {
+    font-size: 18px;
+  }
+
+  .final-btn {
+    padding: 14px 32px;
+  }
+
+  .final-trust {
+    justify-content: center;
+    gap: 18px;
   }
 }
 
+
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
+
+  .final-cta-section {
+    padding: 50px 15px;
+  }
+
+  .final-cta-container h2 {
+    font-size: 24px;
+  }
+
+  .final-sub {
+    font-size: 14px;
+  }
+
+  .final-cta-container p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .final-highlight {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .final-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .final-trust {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .final-trust span {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
+
+  .final-cta-container h2 {
+    font-size: 20px;
+  }
+
+  .final-highlight {
+    font-size: 15px;
+  }
+}
 
 /* ============== */
 
@@ -2574,7 +3515,7 @@ small span{
 /* ===== FAQ SECTION ===== */
 
 .faq-section {
-  padding: 140px 20px;
+  padding: 60px 20px;
   background: linear-gradient(to bottom, #ffffff, #f8f5f1);
 }
 
@@ -2658,155 +3599,106 @@ small span{
 }
 
 /* Responsive */
+/* =================================
+   LARGE TABLET (1200px ↓)
+================================= */
+@media (max-width: 1200px) {
 
-@media (max-width: 768px) {
   .faq-container h2 {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .faq-question {
     font-size: 16px;
   }
+}
 
-  .faq-answer p {
+
+/* =================================
+   TABLET VIEW (992px ↓)
+================================= */
+@media (max-width: 992px) {
+
+  .faq-section {
+    padding: 70px 20px;
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .faq-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .faq-question {
     font-size: 15px;
+    padding: 18px;
+  }
+
+  .faq-answer-content p {
+    font-size: 14px;
   }
 }
 
-      /* ===== Global responsive tweaks ===== */
 
-      @media (max-width: 768px) {
-        body {
-          font-size: 15px;
-        }
+/* =================================
+   MOBILE VIEW (768px ↓)
+================================= */
+@media (max-width: 768px) {
 
-        .navbar {
-          padding: 12px 16px;
-        }
+  .faq-section {
+    padding: 50px 15px;
+  }
 
-        .logo img {
-          width: 64px;
-        }
+  .faq-container h2 {
+    font-size: 24px;
+  }
 
-       
+  .faq-item {
+    margin-bottom: 14px;
+  }
 
-        .content {
-          max-width: 100%;
-          text-align: left;
-        }
+  .faq-question {
+    font-size: 14px;
+    padding: 16px;
+    line-height: 1.4;
+  }
 
-        .content h1 {
-          font-size: 30px;
-        }
+  .faq-answer-content {
+    padding: 0 16px 16px;
+  }
 
-        .content p {
-          font-size: 16px;
-        }
-
-        .highlight {
-          padding: 8px 18px;
-          font-size: 14px;
-        }
-
-        .arrow {
-          width: 40px;
-          height: 40px;
-          font-size: 18px;
-        }
-
-        .left {
-          left: 8px;
-        }
-
-        .right {
-          right: 8px;
-        }
-
-        .cta-section,
-        .luxury-hero,
-        .comparison-section,
-        .process-section,
-        .limited-offer,
-        .testimonial-section,
-        .medical-section,
-        .treatment-section,
-        .audience-section,
-        .visit-final-section,
-        .final-cta-section,
-        .faq-section {
-          padding: 80px 16px;
-        }
-
-        .comparison-container h2,
-        .process-container h2,
-        .treatment-container h2,
-        .audience-container h2,
-        .visit-final-container h2,
-        .faq-container h2,
-        .final-cta-container h2 {
-          font-size: 30px;
-        }
-
-        .luxury-text h1 {
-          font-size: 32px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .navbar {
-          padding: 10px 12px;
-        }
-
-        .logo img {
-          width: 56px;
-        }
-
-        .content h1 {
-          font-size: 26px;
-        }
-
-        .cta-container h2,
-        .comparison-container h2,
-        .process-container h2,
-        .treatment-container h2,
-        .audience-container h2,
-        .visit-final-container h2,
-        .faq-container h2,
-        .final-cta-container h2 {
-          font-size: 24px;
-        }
-
-        .luxury-text h1 {
-          font-size: 26px;
-        }
-
-        .cta-call,
-        .btn,
-        .offer-btn,
-        .process-btn,
-        .treatment-btn,
-        .audience-btn,
-        .visit-final-btn,
-        .final-btn,
-        .medical-btn,
-        .comparison-btn {
-          width: 100%;
-          max-width: 100%;
-          text-align: center;
-        }
-
-        .cta-meta {
-          gap: 8px;
-        }
-
-        .final-trust,
-        .offer-trust {
-          gap: 12px;
-        }
-      }
+  .faq-answer-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
 
 
+/* =================================
+   SMALL MOBILE (480px ↓)
+================================= */
+@media (max-width: 480px) {
 
+  .faq-container h2 {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .faq-answer-content p {
+    font-size: 14px;
+  }
+}
+
+   
       
 /* ===== PREMIUM POPUP ===== */
 

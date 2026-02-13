@@ -71,18 +71,21 @@
             <p>Double the glow. Half the cost.</p>
             <p>Get two sessions of Peels, IVG or Laser — pay for just one.</p>
 
-            <div class="highlight">
+            <div class="btn1">
               BOGO: Peels | IVG | Laser
             </div>
-
-           <a href="#" class="btn1" onclick="openPopup()">
+             <a href="#" class="btn1" onclick="openPopup()">
               Claim Your BOGO Offer Before Feb 14 →
             </a>
 
+         
             <small>
               Valid on Peels, IVG & Laser Treatments |<span> Offer ends February 14th</span> 
             </small>
+            
           </div>
+           
+
         </div>
 
         <!-- SLIDE 2 -->
@@ -95,7 +98,7 @@
               at half the price this Valentine's.
             </p>
 
-            <div class="highlight">
+            <div class="btn1">
               50% OFF Pigmentation Peels
             </div>
 
@@ -124,7 +127,7 @@
               from our doctors. No cost. No pressure.
             </p>
      <!-- <div class="row-btn"> -->
-            <div class="highlight">
+            <div class="btn1">
               Free Consultation (Worth ₹1,000)
             </div>
 <!-- 
@@ -160,7 +163,7 @@
       <h2>Book Your Free Consultation & Claim All Offers</h2>
 
       <a href="tel:+919176006611" class="cta-call">
-        Call Now: +91 91760 06611
+        Call Now : +91 91760 06611
       </a>
 
       <div class="cta-meta">
@@ -217,9 +220,8 @@
 
       <!-- RIGHT VISUAL PANEL -->
       <div class="luxury-visual">
-        <div class="visual-card"><img src="./img/face2.jpg" alt=""></div>
+        <div class="visual-card"><img src="./img/face4.jpg" alt=""></div>
       </div>
-
     </div>
   </section>
 
@@ -241,7 +243,7 @@
             <tr>
               <th>Treatment Experience</th>
               <th class="regular">Regular Clinics</th>
-              <th class="highlight-col">Annai Aesthetics</th>
+              <th >Annai Aesthetics</th>
             </tr>
           </thead>
 
@@ -249,31 +251,31 @@
             <tr>
               <td>Personalized Treatment Plans</td>
               <td>Generic protocols</td>
-              <td class="highlight-col">Customized for you</td>
+              <td >Customized for you</td>
             </tr>
 
             <tr>
               <td>Doctor-Led Medical Care</td>
               <td>Technician-driven</td>
-              <td class="highlight-col">Doctor-supervised</td>
+              <td >Doctor-supervised</td>
             </tr>
 
             <tr>
               <td>Real, Lasting Results</td>
               <td>Quick fixes</td>
-              <td class="highlight-col">Science-backed care</td>
+              <td >Science-backed care</td>
             </tr>
 
             <tr>
               <td>Safe, Tested Protocols</td>
               <td>Inconsistent standards</td>
-              <td class="highlight-col">Medical-grade safety</td>
+              <td >Medical-grade safety</td>
             </tr>
 
             <tr>
               <td>Experience</td>
               <td>Varies</td>
-              <td class="highlight-col">10+ years</td>
+              <td >10+ years</td>
             </tr>
 
           </tbody>
@@ -375,12 +377,11 @@
 
         <span class="offer-tag">LIMITED PERIOD February OFFER</span>
 
-        <h2>Buy 3, Get 2 FREE</h2>
+        <h2>Buy 1, Get 1 FREE</h2>
 
-        <h3>Get 5 Treatments For The Price Of 3</h3>
-
+        
         <ul class="offer-list">
-          <li><strong>Buy 3 Get 2 FREE</strong> (selected treatments)</li>
+         
           <li>Buy 1 Get 1 Free – Peel, IVG, Laser</li>
           <li><strong>Pigmentation Peel at 50% Off:</strong></li>
           <li>Cosmelan Peel – ₹45,000/kit</li>
@@ -403,7 +404,7 @@
 
       <!-- RIGHT IMAGE -->
       <div class="offer-image">
-        <img src="./img/face1.jpg" alt="Clinic Treatment">
+        <img src="./img/face5.jpg" alt="Clinic Treatment">
       </div>
 
     </div>
@@ -416,15 +417,13 @@
 
       <!-- LEFT INTRO -->
       <div class="testimonial-intro">
-        <h2>Trusted By Over 500+ Customers</h2>
+        <h2>Trusted By Over <br> 500+ Customers</h2>
         <p>
           We believe medical aesthetic treatments should be safe, effective,
           and personalized – trusted by our growing community of satisfied clients.
         </p>
 
-        <div class="testimonial-image">
-          <img src="your-image.jpg" alt="Happy Clients">
-        </div>
+       
       </div>
 
       <!-- RIGHT SLIDER -->
@@ -535,7 +534,7 @@
         </ul>
 
         <a href="tel:+919176006611" class="medical-btn">
-          Ask Us Your Questions – Book Consultation →
+          Book Consultation - Ask your Question →
         </a>
 
       </div>
@@ -1103,43 +1102,83 @@
       document.getElementById("sidebar").classList.remove("active");
       document.getElementById("overlay").classList.remove("active");
     }
-
-
-
     // ===============
-    const track = document.querySelector(".carousel-track");
-    const slides = document.querySelectorAll(".carousel-slide");
-    const nextBtn = document.querySelector(".right");
-    const prevBtn = document.querySelector(".left");
+   
+const track = document.querySelector(".carousel-track");
+const slides = document.querySelectorAll(".carousel-slide");
+const nextBtn = document.querySelector(".right");
+const prevBtn = document.querySelector(".left");
 
-    let currentRotation = 0;
-    const totalSlides = slides.length;
-    const rotateAngle = 360 / totalSlides;
+let currentRotation = 0;
+const totalSlides = slides.length;
+const rotateAngle = 360 / totalSlides;
 
-    /* Arrange slides in circle */
-    slides.forEach((slide, index) => {
-      slide.style.transform =
-        `rotateY(${index * rotateAngle}deg) translateZ(450px)`;
-    });
+/* ---------- arrange 3D slides ---------- */
+slides.forEach((slide, index) => {
+  slide.style.transform =
+    `rotateY(${index * rotateAngle}deg) translateZ(450px)`;
+});
 
-    /* RIGHT arrow → rotate right */
-    function rotateRight() {
-      currentRotation -= rotateAngle;
-      track.style.transform = `rotateY(${currentRotation}deg)`;
-    }
+/* ---------- active slide control ---------- */
+function updateActiveSlide() {
+  slides.forEach(slide => slide.classList.remove("active"));
 
-    /* LEFT arrow → rotate left */
-    function rotateLeft() {
-      currentRotation += rotateAngle;
-      track.style.transform = `rotateY(${currentRotation}deg)`;
-    }
+  let index = Math.round(Math.abs(currentRotation / rotateAngle)) % totalSlides;
 
-    nextBtn.addEventListener("click", rotateRight);
-    prevBtn.addEventListener("click", rotateLeft);
+  slides[index].classList.add("active");
+}
 
-    /* Auto rotate (right direction) */
-    setInterval(rotateRight, 6000);
+/* ---------- desktop rotate ---------- */
+function rotateRight() {
+  currentRotation -= rotateAngle;
+  track.style.transform = `rotateY(${currentRotation}deg)`;
+  updateActiveSlide();
+}
 
+function rotateLeft() {
+  currentRotation += rotateAngle;
+  track.style.transform = `rotateY(${currentRotation}deg)`;
+  updateActiveSlide();
+}
+
+/* ---------- mobile flat slider ---------- */
+function mobileNextSlide() {
+  let currentIndex = [...slides].findIndex(s => s.classList.contains("active"));
+
+  slides[currentIndex].classList.remove("active");
+  slides[(currentIndex + 1) % slides.length].classList.add("active");
+}
+
+/* ---------- arrows ---------- */
+nextBtn.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    mobileNextSlide();
+  } else {
+    rotateRight();
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    let currentIndex = [...slides].findIndex(s => s.classList.contains("active"));
+    slides[currentIndex].classList.remove("active");
+    slides[(currentIndex - 1 + slides.length) % slides.length].classList.add("active");
+  } else {
+    rotateLeft();
+  }
+});
+
+/* ---------- auto slider ---------- */
+setInterval(() => {
+  if (window.innerWidth <= 768) {
+    mobileNextSlide();
+  } else {
+    rotateRight();
+  }
+}, 6000);
+
+/* ---------- initial active ---------- */
+updateActiveSlide();
 
     // ======================
 
